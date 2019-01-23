@@ -17,5 +17,10 @@ namespace StudentsDB.Controllers
             List<Student> students = svm.GetStudents();
             return View(students);
         }
+
+        public ActionResult NewStudent()
+        {
+            return View();
+        }
     }
 }
