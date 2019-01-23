@@ -19,5 +19,14 @@ namespace StudentsDB.ViewModels.Home
 
             return students;
         }
+
+        public void SaveNewRecord(Student student)
+        {
+            using (StudentsDBContext db = new StudentsDBContext())
+            {
+                db.Students.Add(student);
+                db.SaveChanges();
+            }
+        }
     }
 }

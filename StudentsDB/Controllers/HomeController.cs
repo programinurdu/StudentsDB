@@ -22,5 +22,19 @@ namespace StudentsDB.Controllers
         {
             return View();
         }
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public ActionResult NewStudent(Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                StudentsViewModel svm = new StudentsViewModel();
+                svm.SaveNewRecord(student);
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View(student);
+        }
     }
 }
