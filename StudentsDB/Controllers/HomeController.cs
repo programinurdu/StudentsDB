@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StudentsDB.Models.DB;
+using StudentsDB.ViewModels.Home;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,9 @@ namespace StudentsDB.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            StudentsViewModel svm = new StudentsViewModel();
+            List<Student> students = svm.GetStudents();
+            return View(students);
         }
     }
 }
