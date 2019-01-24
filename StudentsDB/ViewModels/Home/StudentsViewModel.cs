@@ -28,5 +28,26 @@ namespace StudentsDB.ViewModels.Home
                 db.SaveChanges();
             }
         }
+
+        public Student GetStudentDetailsById(int id)
+        {
+            Student student = new Student();
+
+            using (StudentsDBContext db = new StudentsDBContext())
+            {
+                student = db.Students.Where(x => x.StudentId == id).FirstOrDefault();
+            }
+
+            return student;
+        }
+
+        public void UpdateStudentDetails(Student student)
+        {
+            using (StudentsDBContext db = new StudentsDBContext())
+            {
+                db.Entry(student).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+        }
     }
 }

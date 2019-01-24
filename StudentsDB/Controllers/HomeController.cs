@@ -37,10 +37,25 @@ namespace StudentsDB.Controllers
             return View(student);
         }
 
-        public ActionResult UpdateStudent(int id)
+        public ActionResult UpdateStudent(int id = 0)
         {
+            if (id == 0) { return RedirectToAction("Index", "Home"); }
             StudentsViewModel svm = new StudentsViewModel();
             Student student = svm.GetStudentDetailsById(id);
+
+            return View(student);
+        }
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public ActionResult UpdateStudent(Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                StudentsViewModel svm = new StudentsViewModel();
+                svm.UpdateStudentDetails(student);
+
+                return RedirectToAction("Index", "Home");
+            }
 
             return View(student);
         }
