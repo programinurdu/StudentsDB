@@ -36,5 +36,13 @@ namespace StudentsDB.Controllers
 
             return View(student);
         }
+
+        public ActionResult UpdateStudent(int id)
+        {
+            StudentsViewModel svm = new StudentsViewModel();
+            Student student = svm.GetStudentDetailsById(id);
+
+            return View(student);
+        }
     }
 }
