@@ -62,7 +62,13 @@ namespace StudentsDB.Controllers
 
         public ActionResult DeleteStudent(int id = 0)
         {
+            if (id != 0)
+            {
+                StudentsViewModel svm = new StudentsViewModel();
+                svm.DeleteStudent(id);
+            }
 
+            return RedirectToAction("Index", "Home");
         }
     }
 }

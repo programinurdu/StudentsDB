@@ -49,5 +49,15 @@ namespace StudentsDB.ViewModels.Home
                 db.SaveChanges();
             }
         }
+
+        public void DeleteStudent(int id)
+        {
+            using (StudentsDBContext db = new StudentsDBContext())
+            {
+                Student student = db.Students.Find(id);
+                db.Students.Remove(student);
+                db.SaveChanges();
+            }
+        }
     }
 }
