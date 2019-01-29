@@ -59,5 +59,10 @@ namespace StudentsDB.Controllers
 
             return View(student);
         }
+
+        public ActionResult DeleteStudent(int id = 0)
+        {
+
+        }
     }
 }
