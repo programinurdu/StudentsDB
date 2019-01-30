@@ -45,8 +45,8 @@
             @Html.DisplayFor(modelItem => item.Telephone)
         </td>
         <td>
-            @Html.ActionLink("Edit", "UpdateStudent", new { id = item.StudentId }) |
-            @Html.ActionLink("Delete", "DeleteStudent", new { id = item.StudentId })
+            <a href='@Url.Action("UpdateStudent", "Home", new { id = item.StudentId })'><i class="fas fa-pen-square fa-2x"></i></a>
+            <a href='@Url.Action("DeleteStudent", "Home", new { id = item.StudentId})'><i class="fas fa-window-close fa-2x text-danger"></i></a>
         </td>
     </tr>
 }
