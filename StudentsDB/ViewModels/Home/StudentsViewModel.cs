@@ -29,6 +29,18 @@ namespace StudentsDB.ViewModels.Home
             }
         }
 
+        public List<Student> FindStudent(string searchterm)
+        {
+            List<Student> students = new List<Student>();
+
+            using (StudentsDBContext db = new StudentsDBContext())
+            {
+                students = db.Students.Where(x => x.FullName.Contains(searchterm)).ToList();
+            }
+
+            return students;
+        }
+
         public Student GetStudentDetailsById(int id)
         {
             Student student = new Student();

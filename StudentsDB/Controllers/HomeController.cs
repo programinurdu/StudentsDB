@@ -18,6 +18,15 @@ namespace StudentsDB.Controllers
             return View(students);
         }
 
+        [HttpPost, ValidateAntiForgeryToken]
+        public ActionResult Index(string searchterm)
+        {
+            StudentsViewModel svm = new StudentsViewModel();
+            List<Student> students = svm.FindStudent(searchterm);
+
+            return View(students);
+        }
+
         public ActionResult NewStudent()
         {
             return View();
