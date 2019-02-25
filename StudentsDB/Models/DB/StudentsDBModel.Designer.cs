@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Admin\Documents\Visual Studio 2017\Projects\StudentsDB\StudentsDB\Models\DB\StudentsDBModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Admin\Source\Repos\programinurdu\StudentsDB\StudentsDB\Models\DB\StudentsDBModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
